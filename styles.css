@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 326 100% 98%;
+    --foreground: 263 35% 24%;
+    --card: 0 0% 100%;
+    --card-foreground: 263 35% 24%;
+    --primary: 333 84% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 204 100% 88%;
+    --secondary-foreground: 263 35% 24%;
+    --muted: 274 76% 94%;
+    --muted-foreground: 265 20% 43%;
+    --accent: 41 100% 91%;
+    --accent-foreground: 263 35% 24%;
+    --border: 279 45% 88%;
+    --input: 279 45% 88%;
+    --ring: 333 84% 66%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-body text-foreground antialiased;
+    background:
+      radial-gradient(circle at top left, rgba(216, 184, 255, 0.55), transparent 34rem),
+      radial-gradient(circle at 90% 10%, rgba(186, 230, 253, 0.8), transparent 30rem),
+      linear-gradient(135deg, #fffaf0 0%, #fff0f7 44%, #eff8ff 100%);
+  }
+
+  button,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+.perspective {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.masonry {
+  columns: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
